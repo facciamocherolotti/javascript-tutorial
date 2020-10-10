@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      tutorial JavaScript
+    </title>
+        <link rel="stylesheet" type="text/css" href="01css.css">
+  </head>
+
+<body>
+    <h1>Gli operatori in JavaScript</h1>
+    <p>Gli operatori sono dei simboli sintattici che servono per eseguire operazioni o le espressioni. Possono essere usati con numeri, stringhe, oggetti e a volte possono ritornare un valore booleano come vero o falso (true/false).
+
+        <p>Qui trovi un esempio di:</p>
+        <ul>
+            <li>operatori di assegnazione (come il simbolo =), per gli operatori aritmetici ( come i simboli + - * / %)</li>
+            <li>come usare queste 2 famiglie di operatori insieme.</li>
+            <li>operatori logici (come AND && e OR ||)</li>
+            <li>operatori di comparazione (come maggiore e minore)</li>
+            <li>operatori di tipo (come typeof e instanceof) utili per capire con che tipo di dato si sta lavorando.</li>
+        </ul>
+    </p>
+    <h4>Apri la console e visualizza il codice sorgente: troverai gli script e i relativi risultati!</h4>
+
+    <button><a href="../index.html"> Torna alla Home </a></button>
+
+
+    <script>
+        //---> operatore di assegnazione
+        var esempio = 'questo è un esempio';
+        console.log(esempio);
+
+
+        //---> operatori aritmetici + - * / % ++ ++ ** 
+        var addizione = 1 + 1;
+        console.log(addizione);
+
+        var sottrazione = 2 - 1;
+        console.log(sottrazione);
+
+        var moltiplicazione = 2 * 2;
+        console.log(moltiplicazione);
+
+        // ---> assegnazione + aritmetici += -= *= /=
+
+        var elemento1 = 5;
+        elemento1 = elemento1 + 4;
+        console.log(elemento1);
+
+        // il modo abbreviato per scriverlo è :
+
+        var elemento2 = 5;
+        elemento2 += 4;
+        console.log(elemento2);
+
+        // posso anche unire due stringhe concatenandole:
+
+        var concatena1 = 'stringa1';
+        concatena1 += 'stringa2';
+        console.log(concatena1);
+
+
+        // ---> operatori di comparazione == === != !== > <  >=  <= ternario
+
+        var uno = 5;
+        var due = 10;
+        // un uguale assegna il valore, due volte uguale vuol dire letteralmente è uguale
+        console.log(5 == 10);
+        console.log(5 != 10);
+        console.log(uno < due);
+
+        var tre = '5';
+        console.log(uno == tre);
+        console.log(uno === tre);
+        // io consiglio di usare === (identicità) perchè uguale puo non essere preciso come in questo caso in cui ho una variabile uguale ma non identica (è una stringa)
+        var ternario = 3 < 5 ? 'vero' : 'falso';
+        // in questo caso il ? mi dice se quello che c'è prima scrivi vero altrimenti (:) scrivi falso
+        console.log(ternario);
+
+        // ---> operatori logici && ! ||
+        console.log(5 < 10 && 10 > 7);
+        // per && (and) tutte devono essere vere, per || (or) almeno una deve esserlo
+        console.log(5 < 10 || 2 < 1);
+        // con ! nego il risultato della comparazione
+        console.log(5 < 10 && !2 < 1);
+
+
+        // --->type operator typeof instanceof
+        var numero = 3;
+        console.log(typeof numero);
+        var stringa = 'stringa'
+        console.log(typeof stringa);
+        var oggetto = {}
+        console.log(typeof oggetto);
+        var array = []
+        console.log = (array instanceof Array);
+
+
+        // ---> gli operatori seguono una precedenza, guarda le regole qui: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Operators/Operatori_Aritmetici
+    </script>
+
+
+</body>
+
+</html>
