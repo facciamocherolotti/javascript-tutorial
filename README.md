@@ -37,6 +37,8 @@ Give it a try, and let me know what you think :dizzy:
 _Se hai deciso di stravolgere la tua vita e cambiare lavoro o se vuoi trasferirti negli states ed aprire una startup sappi che JavaScript è uno dei linguaggi più usati al momento (e piu fighi!) quindi dagli una chance, scoprirai che è veramente divertente quando cominci a far funzionare il tuo codice :)_
 
 ## Start
- * [CLONE THIS REPO](https://github.com/facciamocherolotti/javascript-tutorial)
+ * [Clone or Download this repository](https://github.com/facciamocherolotti/javascript-tutorial)
+ #### Come iniziare
+Clona la repo e prova a testare il codice in locale!
 
 
