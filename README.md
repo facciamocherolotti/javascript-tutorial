@@ -32,11 +32,11 @@ _Dove vuoi, io voto sempre per il divano!_
 ### Why
 
 Whether you are an aspiring web designer or just someone who is interested in changing jobs Javascript is the most used and coolest language ever.
-Give it a try, and let me know what you think :)
+Give it a try, and let me know what you think :dizzy:
 
 _Se hai deciso di stravolgere la tua vita e cambiare lavoro o se vuoi trasferirti negli states ed aprire una startup sappi che JavaScript è uno dei linguaggi più usati al momento (e piu fighi!) quindi dagli una chance, scoprirai che è veramente divertente quando cominci a far funzionare il tuo codice :)_
 
 ## Start
- * [HTML](https://github.com/facciamocherolotti/javascript-tutorial/index.html)
+ * [CLONE THIS REPO](https://github.com/facciamocherolotti/javascript-tutorial)
 
 
