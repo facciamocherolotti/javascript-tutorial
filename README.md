@@ -10,7 +10,7 @@ In 2020, a little bit of coding can help.
 I decided to write it in Italian because for those who start writing code and do not know programming languages, a clarification in their native language may be useful, even if all developers write in Italian, so if this is your case, practice with English !
 
 _Ciao! Mi chiamo Charlie, sono una web designer
-Ho pensato di preparare una piccola guida pratica in italiano per JavaScript per chi è alle prime armi e non e non ha mai scritto codice prima di oggi. Sappi che la lingua ufficiale per chi scrive codice è l'inglese ma ae stai partendo da zero alcuni chiarimenti in italiano possono essere più facili da comprendere, per questo ho pensato a questo mini tutorial :)_
+Ho pensato di preparare una piccola guida pratica in italiano per JavaScript per chi è alle prime armi e non e non ha mai scritto codice prima di oggi. Sappi che la lingua ufficiale per chi scrive codice è l'inglese ma se stai partendo da zero alcuni chiarimenti in italiano possono essere più facili da comprendere, per questo ho pensato a questo mini tutorial :)_
 
 
 ### What
@@ -27,6 +27,7 @@ _Ti consiglio di partire dall'inizio e di provare a ripetere gli esempi che ho f
 ### Where
 
 I always vote for the sofa xD
+
 _Dove vuoi, io voto sempre per il divano!_
 
 ### Why
