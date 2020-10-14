@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <ul>
+        <li>operatore di assegnazione</li>
+        <li>il nome di una variabile deve inizire con la lettera o segno del o _ (underscore)</li>
+        <li>può contenere numeri ma non può iniziare con un numero</li>
+        <li>case sensitive</li>
+        <li>non si possono usare parole chiave o parole protette</li>
+    </ul>
+
+    <script>
+        // ---> come si dichiara una variabile
+        uno = 10;
+
+        // ---> posso dare più assegnazioni in una stessa riga
+        var due = 8;
+        tre = 'ciao';
+        tre = []
+            // è solo un modo di scrivere meno
+
+        // ---> con  ECMA06 abbiamo più variabili: var let e const 
+        let varLet = '8';
+        varlet = 10;
+
+        const varConst = '15'
+            //questa variabile è costamte e non si può modificare
+            //se assegno un valore primitivo (es true false o una stringa) non posso cambiare il suo valore, se però ho un oggetto posso poi cambiare la costante
+
+        const obj = {}
+        obj.x = 10;
+        obj.y = 100;
+        // qui javascript non si lamenta perchè sto manipolando il valore dell'oggetto
+
+        //const arr[];
+        //arr[0] = 200;
+        //anche per l'array non è un problema, la costante resta arr
+        //spesso si usano le MAIUSCOLE per le costanti così a colpo d'occhio si nota subito!
+
+
+        // ---> cosa può contenere una variabile?
+        //Una variabile può contenere qualsiasi cosa
+        let xx = 9;
+        xx = 'ciaociao'
+        xx = [];
+        xx = {};
+        xx = function() {};
+
+        //undefined (no value) e null (no object)
+        undefined // si usa quando non è stato definito un valore
+        let varNondefinita
+        console.log(varNondefinita);
+        null // appare quando JavaScript si aspetta un valore ma non lo trova
+    </script>
+
+</body>
+
+</html>
