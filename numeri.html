@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - i Numeri
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <p> I numeri sono uno dei valori primitivi in JavaScript.</p>
+    <p>Javascript li tratta come se tutti avessero la virgola (float) quindi va specificato se sono integer o float</p>
+
+    <script>
+        //---> conversione di stringe in numeri
+        let stringa = '15.5';
+        console.log(parseInt(stringa));
+        console.log(typeof parseInt(stringa));
+
+        let stringa2 = '15.5';
+        console.log(parseFloat(stringa2)); //cosi ho tutto il numero inclusa la ,
+        console.log(typeof parseFloat(stringa2));
+
+
+        //--->come per le stringhe (esiste l'oggetto string)si puo usare l'oggetto Number:
+        console.log(typeof Number(stringa2));
+        //anche in questo caso si può utilizzare + che concatenando trasforma in una stringa
+        console.log(typeof + stringa2);
+
+        let variabileMista = 1 + 1 + 'ciao';
+        console.log(variabileMista);
+        //JS legge quindi prima farà la somma e poi concatenerà creando una stringa!
+        //se fosse il contrario?
+
+        let variabileMista2 = 'ciao' + 1 + 1;
+        console.log(variabileMista2);
+        console.log(typeof variabileMista2);
+
+        // operatore toString
+        let numero = 42
+        console.log(typeof numero.toString());
+        //questo puo anche convertire in base alla base!:
+        let numero2 = 42
+        console.log(typeof numero2.toString(4));
+
+
+        //--->/NaN (Not a Number)
+        console.log(isNaN(variabileMista));
+        // è vero perchè non è un numero, ma è una stringa!
+        console.log(isNaN(numero));
+
+
+        //---> Infinity
+        //JS ha un determinato range di numeri (da un massimo a un minimo) che può maneggiare.
+        //oltre questi limiti ritorna Infinity
+        let divisione = 3 / 0;
+        console.log(divisione);
+
+        //---> numeri decimali, ottali, esadecimali e binari
+        //se voglio scrivere un numero in binario
+        let binario = 0b111;
+        let ottale = 0o3456;
+        let esadecimale = 0xFFAA;
+        //posso usare la funzione parse int per convertire i numeri
+        console.log(parseInt(0xFFAA, 16));
+
+        //--> numeri con la virgola
+        //i numeri con la virgola sono particolari in JS, possono non essere salvati correttamente!
+        let somma = 0.1 + 0.2;
+        console.log(somma);
+        //come si risolve? Posso convertirli in numeri interi:
+        let somma2 = 0.1 * 10 + 0.2 * 10;
+        console.log(somma2 / 10);
+        // posso usare la proprietà EPSILON
+        console.log(Number.EPSILON);
+        console.log(0.1 + 0.2 - 0.3 < Number.EPSILON);
+        //se il risultato è minore di tutta questa espressione
+
+        //---> altre proprietà utili dell'oggetto Number:
+        console.log(Number.MAX_VALUE); //questo è il numero massimo entro il quale JS non riesce a maneggiare i numeri
+        console.log(Number.MIN_VALUE); // questo è il numero è il più piccolo
+
+        //se ho un numero decimale e voglio vedere solo le prime due cifre decimali:
+        let numeroDecimale = 4.56282373;
+        console.log(numeroDecimale.toFixed(2));
+
+
+        // qui trovi tutti i metodi e le proprietà relative ai numeri: https://www.w3schools.com/jsref/jsref_obj_number.asp
+    </script>
+
+</body>
+
+</html>

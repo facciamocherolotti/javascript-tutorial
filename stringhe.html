@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - le stringhe
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <p>Le stringhe sono una sequenza di caratteri alfanumerici e sono presenti in tutti i linguaggi di programmazione.</p>
+
+    <script>
+        //---> come scrivere una stringa:
+        let stringa1 = 'stringa con apice'
+        let stringa2 = "stringa con doppie virgolette"
+        let stringa3 = `stringa con back (si scrive premendo opt93` //ES6
+
+        //---> andare a capo con le stringhe
+        let stringa4 = `serydtuyfugkhjbvkj yfugkhjbvkughjbvlgi jnelkjkjnk 
+        uygkvkgyuyilb`
+            //con i backstick basta andare a capo! con gli apici si puo inserire \ o + e unire due stringhe
+            // posso anche usare un <br>
+        console.log(stringa4);
+
+        //--->escape
+        // se devo usare un apice dentro una stringa con apici:
+        let stringa5 = ' non sarà un\'avventura' //va messo prima un backslash
+        console.log(stringa5);
+
+        //--->stringa come valore iterabile
+        //una stringa può essere usata anche come array
+        let stringa6 = 'supercalifragilistihchespiralidoso'
+        console.log(stringa6.length); //questa proprietà mi dice la lunghezza della stringa
+        console.log(stringa6[0]) //così visualizzo il primo carattere
+        console.log(stringa6[112]) //se la stringa è meno lunga sarà indefinito!
+
+        //--->inserire variabili in una stringa
+        let uno = 1;
+        let due = 'due';
+        let stringa7 = 'la variabile uno:' + uno + 'la variabile due:' + due;
+        console.log(stringa7);
+
+        //se al posto degli apici uso i backtick ho lo stesso risultato!
+        //nb: scrivi meno ed è più leggibile (non uso più il + ma solo ${variabile})
+        let stringa8 = `la variabile uno: ${uno} la variabile due: ${due}`;
+        console.log(stringa8);
+
+        //---> inserire unicode
+        let stringa9 = 'ciao \u2026';
+        console.log(stringa9);
+
+        // ---> oggetto String()
+        //al suo interno JS ha già un oggetto chiamato stringa e posso convertire altre cose in stringhe
+        let num = 6;
+        console.log(typeof num);
+        num = String(num);
+        console.log(typeof num);
+        //conviene usarlo solo in questo modo!
+
+        //se lo uso con la keyword new davanti non creo più una stringa ma un oggetto
+        let newStringa = new String(6);
+        console.log(typeof newStringa);
+
+        // posso anche creare una stringa mettendo davanti gli apici:
+        let num2 = 8;
+        num2 = '' + num2;
+        console.log(typeof num2);
+
+        //sono tutti equivalenti, il primo è più descrittivo! :)
+
+        // ---> metodi per stringhe
+        let upperCase = 'SUSY IL GATTO';
+        console.log(upperCase.toLowerCase());
+
+        let funzioneTrim = '             susy        ';
+        console.log(funzioneTrim.trim());
+
+        // ci sono trantissimi metodi che si possono usare, puoi trovarli qui: https://www.w3schools.com/jsref/jsref_obj_string.asp
+    </script>
+
+</body>
+
+</html>

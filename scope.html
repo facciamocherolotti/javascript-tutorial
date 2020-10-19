@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - lo Scope
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <p>Lo scope è l'ambiente in cui una variabile o una funziona è valida.Uno script JavaScript può avere diversi ambienti uno interno all'altro, capire cosa definisce un ambiente e come funziona lo scope permette di sapere dove è possibile usare una determinata
+        variabile o funzione.</p>
+
+    <script>
+        //scope funzione
+        //dal punto di vista dello scop let e cost si comportano uguale, cambia come si comporta var
+        //qui ho un ambiente globale che va dall'apertura alla chiusura sello script (un ambiente globale).
+        var x = 10;
+        var y = 50;
+
+        console.log(x);
+        console.log(y);
+        // posso manipolarle, a visualizzare gli output, non ci sono problemi.
+        //cosa succede se creo un ambiente interno all'ambiente globale come quando creo una funzione?
+
+        function funz1() {
+            console.log(x);
+            console.log(y);
+        }
+        funz1();
+        // posso dichiarare variabili in ambienti interni all'ambiente globale, visualizzando variabili dichiarate nell'ambiente esterno
+        // non posso fare il contrario: cioè non posso dichiarare variabili in ambienti interni manipolandole in ambienti esterni
+
+        function funz2() {
+            console.log(x);
+            let z = 40;
+            console.log(z);
+        }
+        funz2();
+        //ora sono fuori quindi se cerco di stampare z mi darà errore:
+        //console.log(z);
+
+        // cosa cambia tra var e let?
+        //var è functional scope
+        //let e const è block scope
+
+        //scope blocco
+        if (true) {
+            var xxxx = 10;
+            let yyyy = 100;
+            console.log(xxxx)
+            console.log(yyyy)
+        }
+
+        //console.log(yyyy) //se stampo questa ho un errore!
+        //per creare ambienti interni con var devo creare funzioni
+        //per creare ambienti interni con let posso usare funzioni o altri blocchi di codece {}
+        //questo serve per uniformare js a tutti gli altri linguaggi, per questo va usata sempre let!
+    </script>
+
+</body>
+
+</html>

@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <title>
-        tutorial JavaScript - le Variabili
-    </title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='01css.css'>
 </head>
 
 <body>
@@ -43,28 +44,23 @@
 
         //const arr[];
         //arr[0] = 200;
-        //anche per l'array non è un problema, la costante resta arr, anche se sto cambiando i valori non è un problema, se invece voglio che l'array diventi un oggetto JS mi da errore!
-        // arr = {}  <---qui mi darebbe errore!
-
-        //NB: spesso si usano le MAIUSCOLE per le costanti così a colpo d'occhio si nota subito!
+        //anche per l'array non è un problema, la costante resta arr
+        //spesso si usano le MAIUSCOLE per le costanti così a colpo d'occhio si nota subito!
 
 
         // ---> cosa può contenere una variabile?
-        //Una variabile può contenere qualsiasi cosa:
-        let xx = 9; // un numero
-        xx = 'ciaociao'; // una stringa
-        xx = true; // un valore boleano
-        xx = []; // un array
-        xx = {}; // un oggetto
-        xx = function() {}; // una funzione
-        console.log(xx);
+        //Una variabile può contenere qualsiasi cosa
+        let xx = 9;
+        xx = 'ciaociao'
+        xx = [];
+        xx = {};
+        xx = function() {};
 
         //undefined (no value) e null (no object)
-        //quando JS non ha un valore usa due tipi di nominativi:
-        undefined //si usa quando non è stato definito un valore
-        let varNondefinita;
+        undefined // si usa quando non è stato definito un valore
+        let varNondefinita
         console.log(varNondefinita);
-        null //appare quando JavaScript si aspetta un valore ma non lo trova
+        null // appare quando JavaScript si aspetta un valore ma non lo trova
     </script>
 
 </body>
