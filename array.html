@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - gli Array
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <p> Gli array sono degli oggetti particolari: invece di avere le proprietà identificate da un nome hanno proprietà identificate da un numero.</p>
+    <p>Questo numero è chiamato indice e parte da 0</p>
+    <h4>Esempio oggetto persona:</h4>
+    <p id="display">esempio persona</p>
+    <script>
+        let array = [];
+        //--> questo è un array letterale
+        console.log(array.length); //length mi mostra quanti elementi ci sono
+
+        let array2 = ['bla bla', true, 878786869];
+        console.log(array2.length);
+        console.log(typeof array2);
+
+        // come riconosco un array da un oggetto?
+        console.log(array2 instanceof Array);
+        console.log(Array.isArray(array2));
+
+
+        //---> aggiungere un elemento
+        array2[0] = 42;
+        console.log(array2[0]); //ho sostituito 'bla bla' con 42
+        array2[10] = 'bla bla al 10';
+        console.log(array2[10]);
+        console.log(array2.length);
+        //misurerà 11 anche se in verità avrei 4 elementi! Ho creato degli spazi vuoti (da veitare!!)
+
+
+
+        let array3 = [1, 2, 3, 4];
+        array3[array3.length] = 1000; //cosi ho inserito un altro elemento alla fine
+        console.log(array3[4]);
+        //così ho aggiunto un ulteriore elemento in fondo (metodo push)
+        array3.push(2000);
+        console.log(array3[5]);
+        console.log(array3.length);
+        //così ho aggiunto un ulteriore elemento in cima (metodo unshift)
+        array3.unshift('inizio');
+        console.log(array3[0]); //ora il primo è diventato 3000!
+        console.log(array3.length); //ora ho 7 elementi!
+        //---> eliminare con metodo pop/shift
+
+        //se voglio eliminarne l'ultimo (metodo pop):
+        let ultimo = array3.pop();
+        console.log(array3.length); //eliminato quindi ora sono 6
+        console.log(ultimo); // così stampo cosa ho eliminato
+        //se voglio eliminarne dall'inizio del mio array (metodo shift):
+        let primo = array3.shift();
+        console.log(array3.length);
+        console.log(primo);
+
+
+
+        //---> sovrascrivere un elemento
+        console.log(array3[0]);
+        array3[0] = 'stringa'; //sostituisco con quello che voglio
+
+        //---> azzerare un Array
+        array3 = []; // mettendo un array vuoto lo azzero!
+        console.log(array3.length);
+
+        //---> ciclare un Array
+        let array4 = [1, 2, 3, 4, 5];
+        array4.forEach(function(elem, index) {
+            console.log('Elemento:' + elem + 'Indice:' + index);
+
+        })
+
+        //---> Concatenare Array /push+spread operator
+        let uno = [23, 45, 67];
+        let due = [88, 98, 11];
+        let tre = uno.concat(due);
+        console.log(tre);
+
+        //un altro modo per vederlo è con l'operatore spread:
+        uno.push(...due);
+        console.log(tre);
+
+        //---> rimuovere elementi e aggiungerne altri
+        //primo num = posizione, secondo numero = elementi da togliere, lista elementi
+        uno.splice(1, 2); //gli dico quanti elementi voglio eliminare partendo dall'indice 1 e gli dico che voglio eliminare due elementi
+        console.log(uno);
+        //sempre con il metodo splice posso inserire elementi:
+        uno.splice(1, 0, 33, 44);
+        console.log(uno);
+
+
+        //---> sort con stringhe
+        //come si ordinano gli array?
+        let parole = ['libro', 'quaderno', 'zaino'];
+        //se li voglio in ordine alfabetico:
+        console.log(parole.sort());
+        //non lo posso fare con i numeri perchè sort me li convertirebbe in stringa!
+        //ordine crescente
+        let numeri = [3, 67, 14, 9];
+        console.log(numeri.sort(function(a, b) {
+            return a - b
+        }));
+        //ordine decrescente
+        console.log(numeri.sort(function(a, b) {
+            return b - a
+        }));
+
+        //---> array multidimensionale
+        let multi = [
+            ['via roma', 10],
+            ['corso impero', 8],
+            ['largo augusto', 7]
+        ];
+        console.log(multi[1][0]); //mostra quale array e poi quale elemento dentro
+        console.log(multi[2][1]);
+
+
+        //esercizio crea due array con una serie di nomi, poi uniscili, ordinali alfabeticamente e moi modifica un nome
+
+        let maschi = ['Harry', 'Ron', 'Neville', 'Draco'];
+        let femmine = ['Hermione', 'Luna', 'Penelope', 'Ginevra'];
+        let classe = maschi.concat(femmine).sort();
+        console.log(classe);
+        //ora sostituisco Ginevra con Ginny
+        classe.splice(1, 1, "Ginny");
+        console.log(classe);
+    </script>
+
+</body>
+
+</html>

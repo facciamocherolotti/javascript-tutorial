@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - gli Oggetti (introduzione)
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <p> JavaScript è un linguaggio orientato ad oggetti, quindi glioggetti sono un elemento fondamentale.</p>
+    <p> Gli oggetti possono essere dichiarati come le variabili, usando const e let.</p>
+    <h4>Esempio oggetto persona:</h4>
+    <p id="display">esempio persona</p>
+
+    <h4>Esempio oggetto gatto:</h4>
+    <p id="display2">esempio gatto</p>
+    <script>
+        //oggetto con proprietà (properties) e metodi (funzioni/azioni)
+        let personaEsempio = {};
+        //questo è un oggetto (letterale)
+        //si può anche usare l'oggetto object ma non è consigliato!
+
+        //un oggetto ha delle caratteristiche che si chiamano proprietà
+        //si può mettere qualsiasi cosa dentro una proprietà (stringe numeri, oggetti, array etc)
+        let persona = {
+            nome: 'Harry', // il nome della proprietà si scrive senza apici, poi si mette il valore dopo i due punti
+            cognome: 'Potter', // basta una virgola per aggiungere una nuova proprietà
+            anni: 30,
+            //adesso voglio che questo oggetto faccia delle azioni
+            //quando si crea una proprietà con delle azioni si dice che creo un METODO
+            presentarsi: function() {
+                // qui si delimita il blocco di codice:
+                document.getElementById('display').innerHTML = `Ciao io sono ${this.nome} ${this.cognome} e ho ${this.anni} anni.`;
+                //per riferirsi alle proprietà dello stesso oggetto si usa la keyword this. e il nome della proprietà
+                //quando una funzione è dentro una proprietà si dice metodo dell'oggetto.
+            }
+        };
+        //se voglio visualizzare il mio saluto devo invocare il metodo presentarsi dell'oggetto persona:
+        persona.presentarsi();
+        //quando si invocano metodi e funzioni servono sempre le parentesi
+
+
+        //posso visualizzare le proprietà direttamente:
+        console.log(persona.nome);
+
+        //posso accedere alle proprietà di un oggetto anche usando le parentesi quadre:
+        let proprietàCognome = 'cognome';
+        console.log(persona[proprietàCognome]);
+
+        //nelle parentesi quadre posso creare espressioni
+        let proprietàAnni = 'anni';
+        console.log(persona[proprietàAnni + 10]);
+
+        //posso aggiungere proprietà invocando l'oggetto
+        persona.indirizzo = 'Hogwarts';
+        console.log(persona.indirizzo);
+
+        //posso anche cancellare proprietà di un oggetto con la keyword DELETE
+        delete persona.indirizzo;
+        console.log(persona.indirizzo); //se è eliminata appare undefined :)
+
+
+        //esercizio: creo un oggetto gatto con le proprietà razza colore e nome e  come azione lo stampo nella pagina mettendo il nome in uppercase:
+        let gatto = {
+            razza: 'mista',
+            colore: 'rosso',
+            nome: 'grattastinchi',
+            azione: function() {
+                    document.getElementById('display2').innerHTML =
+                        `Ho un nuovo gatto di nome ${this.nome.toLocaleUpperCase()}, è un gatto ${this.colore} di razza ${this.razza}`;
+                } //ho aggiunto una proprietà qui e ho reso maiuscolo il nome (si possono fare varie cose in questo modo come somme etc)
+        }
+        let nome =
+            gatto.azione();
+    </script>
+
+</body>
+
+</html>

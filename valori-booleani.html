@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - i Valori Booleani
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <p> I valori booleani sono true e false.</p>
+    <p>Sono valori primitivi e sono importantissimi perchè ci aiutano a creare blocchi condizionali (come "if .. else e "switch")</p>
+    <p>Sono inoltre utili per eseguire cicli (for e while).</p>
+    <script>
+        //---> operatori per i valori booleani
+        // == === < > <= >= != !== && || ! ternario?:
+
+        console.log(3 == 3);
+        console.log(3 === '3');
+        console.log(!7);
+        console.log(3 < 4 && 3 > 9);
+
+        //---> conversione di un valore in booleano
+        //come per le stringhe e i numeri esiste un oggetto: Boolean
+        console.log(Boolean(9));
+        console.log(typeof Boolean(9));
+        console.log(Boolean(0)); //l'unico numero che ritorna false è zero
+        console.log(typeof Boolean(0));
+
+        // un altro modo per convertire un valore in boleano è usando la doppia negazione (!!):
+        let numero = 42
+        console.log(!!numero);
+        console.log(typeof !!numero);
+
+
+        // ---> valori che ritornano falso: 0, Nan; ??, undefined, null, false
+        console.log(Boolean(0));
+        console.log(Boolean(NaN));
+        console.log(Boolean(''));
+        console.log(Boolean(undefined));
+        console.log(Boolean(null));
+        console.log(Boolean(false));
+        //attenzione, la stringa 'false' sirulterebbe vera :)
+
+        //ecco alcuni metodi e proprietà relativi ai valori booleani: https://www.w3schools.com/jsref/jsref_obj_boolean.asp
+    </script>
+
+</body>
+
+</html>
