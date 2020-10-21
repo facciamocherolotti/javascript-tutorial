@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - Le Funzioni
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <p>Le funzioni sono importantissime in JavaScript infatti sono chiamate oggetti di prima classe.</p>
+    <h4>risultato esercizio:</h4>
+    <p id="displayanni">esempio anni</p>
+    <script>
+        //---> definizione funzione
+        //il nome della funzione deve sempre spiegare l'azione che fa!
+        /* function nomeFunzione(parametreo1, parametro2) {
+            //azione da svolgere
+            return //un valore;
+        }
+        //la definizione della funzione dopo la graffa non si chiude con il ;
+        //parametri: posso passare qualunque valore, normalmente vengono usati per eseguire determinati calcoli
+        //posso invocare altre funzioni dentro una funzione e posso ritornare un valore, una stringa un numero etc... qualsiasi valore
+
+        // per invocare la funzione:
+        nomeFunzione(argomento1, argomento2);
+        //se la funzione prevede parametri devo passali, invocandola diventano argomenti
+        */
+
+        //--> esempio di una funzione:
+        function moltiplicaNumero(numero1, numero2) {
+            let moltiplicazione = numero1 * numero2;
+            return moltiplicazione;
+            //posso anche scrivere meno e fare return = numero1 * numero2;  
+        }
+        let risultato = moltiplicaNumero(5, 8);
+        console.log(risultato);
+        // posso invocarla quante volte voglio
+        risultato = moltiplicaNumero(98, 32);
+        console.log(risultato);
+
+
+        //--->scope
+        //Le funzioni partecipano nel definire lo scope delle variabili
+        //se ho una variabile esterna e poi dichiaro una funzione
+        let esterna = 5;
+
+        function visualizza() {
+            console.log(esterna);
+            let interna = 10;
+            console.log(interna);
+        }
+        visualizza(); //invoco la funzione
+        console.log(esterna);
+        //console.log(interna); questa non si vede perchè fuori dalla funzione questo valore non esiste
+
+        //---> funzione senza return
+        function senzaReturn() {
+            console.log('interno');
+        }
+        console.log('esterno', senzaReturn());
+        //una funzione che non ha specificato return mi da di default undefined
+
+
+        //---> invocare una funzione da un altra funzione
+        function primaFunzione() {
+            console.log('Prima funzione');
+        }
+
+        function secondaFunzione() {
+            console.log('seconda funzione');
+            primaFunzione();
+        }
+        secondaFunzione();
+
+
+        //parametri di default
+
+        function moltiplica2(param1, param2 = 5) {
+            console.log(param1 * param2);
+        }
+        moltiplica2(4, 7);
+        moltiplica2(9); // non mettendo il secondo parametro usa quello di default
+
+
+        //esercizio: crea una stringa output con nome di persona passato come argomento
+        //calcola mesi e giorni vissuti basati sugli anni passati come argomento
+
+
+        function calcolaEtà(nome, età) {
+            let mesi = età * 12;
+            let giorni = età * 365;
+            document.getElementById('displayanni').innerHTML =
+                `Ciao sono ${nome} e ho ${età} anni. La mia età corrisponde a ${giorni} giorni e ${mesi} mesi! LoL`; //posso anche mettere le variabili qui dentro le graffe! :)
+        }
+        calcolaEtà('Harry', 30);
+    </script>
+
+</body>
+
+</html>
