@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - Blocchi condizionali
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <ul>
+        <p>Un blocco condizionale è un blocco di codice che viene eseguito solo se una determinata espresisone è vera</p>
+    </ul>
+
+    <script>
+        // ---> blocco condizionle (conditional statements)
+        // operatori e valori boleani
+
+        /*
+        sintassi:
+        //if espressione {
+        qui inserisco codice
+        } else {
+            qui ci va altro codice
+        }
+        */
+
+        //if (se)
+        let numero = 5
+        if (numero > 4) {
+            console.log('Yay!')
+                //se invece questo blocco di codice è falso viene ignorato quindi inserisco un alternativa:
+        } else {
+            console.log('No way!')
+        }
+
+        let numero2 = 5
+        if (numero2 > 6) {
+            console.log('Yay!')
+                // ignorerà la prima e stamperà la seconda!
+        } else {
+            console.log('No way!')
+        }
+
+        // se ho più "se" si uniscono piu else così:
+        /*
+        sintassi:
+        //if espressione {
+            qui inserisco codice //se questa espressione è vera viene eseguito solo questo codice!
+        } else if {
+            qui ci va altro codice
+        } else if {
+            qui ci va altro codice
+        } else {
+            qui ci va altro codice
+        }
+        */
+
+        //--->se ho molti else if si utilizza switch
+        /*
+        sintassi:
+        switch(espressione){
+            case 1:
+                blocco di codice
+                break;
+            case 2:
+                blocco di codice
+                break;
+            case 3:
+                blocco di codice
+                break;
+            default:
+                codice default
+        }
+        */
+
+        //cosa succede? in pratica si va a confrontare l'espressione con la condizione 1, se è vera il codice viene eseguito e con break si esce dal blocco condizionale, se è falsa si confronta con il codice due
+        //se tutte e tre sono false si esegue il default
+
+
+        let numero3 = 3
+        switch (numero3) {
+            case 1:
+                console.log('Numero 1');
+                break;
+            case 2:
+                console.log('numero 2');
+                break;
+            case 3:
+                console.log('numero 3');
+                break;
+            default:
+                console.log('default');
+        }
+
+        //per lo switch può essere usato lo stesso blocco di codice per più casi
+        //esempio: faccio inserire un numero da 1 a 10 e gli dico se è pari o dispari
+        let num = prompt('inserisci un numero da 1 a 10');
+        switch (num) {
+            case '1': //nb il prompt converte tutto in stringhe quindi devo convertirli :) 
+            case '2':
+            case '3':
+            case '5':
+            case '7':
+                console.log('è un numero primo');
+                break;
+            case '9':
+                console.log('è un numero dispari');
+                break;
+            default:
+                console.log('è un numero pari');
+        }
+
+        //ecco un altro esempio:
+        let hogwarts = prompt('inserisci la tua casa');
+        switch (hogwarts) {
+            case "corvonero":
+            case "grifondoro":
+            case "tassorosso":
+            case "serpeverde":
+                console.log('Hagrid ti sta aspettando al dormitorio!')
+                break;
+            default:
+                "babbano"
+                console.log('sei un babbano e non sei stato ammesso alla scuola!');
+        }
+
+        //---> operatore ternario
+        //in alcuni casi puo sostituire un blocco ternarioc ome if else
+        //sintassi: condizione ? se è vero : se false;
+        let stringaOperatore = 5 < 4 ? 'vero' : 'falso';
+        console.log(stringaOperatore);
+
+
+        //esercizio:
+        //far inserire un numero intero e dire se è pari, dispari negativo o positivo
+
+        let numeroEsercizio = prompt('Inserisci un numero');
+        let risultato = '';
+        if (numeroEsercizio > 0) {
+            risultato += 'è un numero positivo!';
+        } else if (numeroEsercizio < 0) {
+            risultato += 'è un numero negativo!';
+        } else {
+            risultato += 'è il numero zero!';
+        }
+        risultato += numeroEsercizio % 2 ? 'nb: è un numero dispari' : 'nb:è un numero pari';
+        console.log(risultato);
+    </script>
+
+</body>
+
+</html>
