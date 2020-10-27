@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - i Cicli while
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <p> In JavaScript come in altri linguaggi di programmazione esiziono i cicli while</p>
+
+    <script>
+        // while e do..while
+        //se l'espressione ritorna vero eseguirà il codice nelle graffe
+        /*
+        sintassi:
+         while (espressione) {
+            codice se è vero lo esegue altrimenti continua
+        }
+        */
+
+        let numero = 0;
+        while (numero <= 10) {
+            console.log(numero);
+            numero++;
+        }
+
+        //conviene usare il ciclo for quando conosciamo il numero di azioni che dobbiamo eswguire
+        //conviene usare while quando non sappiamo a priori quante iterazioni avrò
+
+        let stringa = 'lorem ipsum bla bla bla bla bla bla bla'
+
+        let iter = 1;
+        while (stringa.indexOf('a') >= 0) {
+            stringa = stringa.replace('a', 'u');
+            console.log(iter++);
+        }
+        console.log(stringa);
+
+
+        //do... while è una variante e serve per eseguire il codice più volte fino a quando non diventa falso
+        //la differenza è che il codice viene esweguito almeno una volta, prima lo esegue e poi controlla se ritorna vero.
+
+        let numeroExtra = 10
+        do {
+            console.log('codice eseguito prima del check!')
+        } while (numeroExtra < 5) //visto che è falso si ferma ma esegue il codice prima
+    </script>
+
+</body>
+
+</html>

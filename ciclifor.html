@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        tutorial JavaScript - i Cicli for
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <p> In JavaScript ci sono tre tipi di cicli for.</p>
+    <p id="display">esempio tabella</p>
+    <p id="display2">esempio countdown</p>
+    <script>
+        //---> cicli o loop 
+        for (let i = 0; i < 20; i++) {
+            console.log('il valore di i è: ' + i);
+        }
+
+        let arrayAnimali = ['Cani', 'Gatti', 'Cavalli'];
+        for (let i = 0; i < arrayAnimali.length; i++) {
+            console.log('ci sono: ' + arrayAnimali[i]);
+        }
+
+        //si possono usare cicli for innestati in altri (es in una tabella html)
+        // il for esterno mi crea le righe, quello interno le celle:
+        let tabella = '<table border= "1">';
+        for (let x = 0; x < 4; x++) {
+            tabella += '<tr>';
+            for (let y = 0; y < 5; y++) {
+                tabella += '<td>Cella' + y + '</td>';
+            }
+            tabella += '</td>';
+        }
+        tabella += '</table>';
+        document.getElementById('display').innerHTML = tabella;
+
+
+        //break mi serve per uscire dal ciclo prima del suo completamento
+
+        for (let i = 0; i < 10; i++) {
+            if (i === 7) {
+                break;
+            }
+            console.log('iterazione: ' + i);
+        }
+
+        // se voglio controllare in un array se c'è un elemento se lo trovo posso eseguire un determinato tipo di codice
+        let ricetta = ['uova', 'latte', 'farina'];
+        for (let i = 0; i < 10; i++) {
+            if (ricetta[i] === 'latte') {
+                console.log('Ci sono!');
+                break;
+            }
+            console.log('iterazione ingrediente: ' + i);
+        }
+        // alla seconta iterazione esce perchè non mi interessa il resto, JS risparmia tempo!
+
+        //la keyword continue serve per saltrne una
+        let keyContinue = ['uova', 'latte', 'farina'];
+        for (let i = 0; i < 10; i++) {
+            if (i === 6) {
+                console.log('Salta la sesta!!');
+                continue;
+            }
+            console.log('iterazione continue: ' + i);
+        }
+
+        //il metodo continue e break funzionano solo nel ciclo for, nel foreach no perchè è una funzione!
+
+
+        //---> for...in per ciclare oggetti 
+        let oggettox = {
+            a: 6,
+            b: 'stringa 1',
+            c: true
+        };
+        console.log('b' in oggettox);
+
+        //se la proprietà b esiste nell'oggetto mi da vero, altrimenti falso
+        //il ciclo for in passa in rassegna tutte le proprietà del mio oggetto
+        let oggettoy = {
+            a: 5,
+            b: 'proprietà2',
+            c: 'proprietà3'
+        };
+        for (let prop in oggettoy) {
+            console.log('Proprietà: ' + prop + ' e valore: ' + oggettoy[prop]);
+        }
+
+        //---> for...of ES6 per ciclare oggetti o array
+        //si può usare sia per ciclare array che oggetti
+
+        let esempioArray = ['cane', 'gatto', 'cavallo'];
+        for (let elemento of esempioArray) {
+            console.log('Elemento: ' + elemento);
+        }
+
+
+        //se oltre al valore dell'elemento voglio anche lavorare con l'indice:
+        let esempioArray2 = ['cane', 'gatto', 'cavallo'];
+        for (let [index, elemento] of esempioArray2.entries()) {
+            console.log('Elemento: ' + elemento + ' - indice: ' + index);
+        }
+
+
+        let ricettaTorta = {
+            farina: '500 gr',
+            zucchero: '300 gr',
+            latte: '250 gr',
+            burro: '200 gr',
+            uova: '4'
+        };
+        for (let [index, elem] of Object.entries(ricettaTorta)) {
+            console.log('ingrediente:' + index + ' peso:' + elem);
+        }
+
+
+        //esercizio: con un solo ciclo visualizza su una pagina un cuntdown da 10 a zero su console conteggio da 0 a 10
+        let display2 = '';
+        for (let i = 0; i <= 10; i++) {
+            display2 += `Valore: ${10 - i}<br>`;
+            console.log('valore: ' + i);
+        }
+        document.getElementById('display2').innerHTML = display2;
+    </script>
+
+</body>
+
+</html>
